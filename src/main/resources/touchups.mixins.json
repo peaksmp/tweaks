@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.peaksmp.touchups.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "server": [
+    "PlayerJoinMixin",
+    "ServerStatusPacketListenerImplMixin",
+    "ServerGamePacketListenerImplMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

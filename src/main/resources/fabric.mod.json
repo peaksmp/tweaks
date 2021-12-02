@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "touchups",
+  "version": "${version}",
+  "name": "touchups",
+  "description": "Simple gameplay mechanic refinements to decrease the repetitiveness of the game for seasoned Minecrafters.",
+  "authors": [
+    "Caden Kriese"
+  ],
+  "contact": {
+    "website": "https://peaksmp.org"
+  },
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "server": [
+      "org.peaksmp.touchups.Touchups"
+    ]
+  },
+  "mixins": [
+    "touchups.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.5",
+    "fabric": "*",
+    "minecraft": "1.18"
+  }
+}
