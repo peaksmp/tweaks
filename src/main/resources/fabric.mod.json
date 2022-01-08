@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "touchups",
+  "id": "tweaks",
   "version": "${version}",
-  "name": "touchups",
-  "description": "Simple gameplay mechanic refinements to decrease the repetitiveness of the game for seasoned Minecrafters.",
+  "name": "tweaks",
+  "description": "Simple gameplay mechanic refinements to decrease the repetitiveness and enhance the experience of the game for seasoned Minecrafters.",
   "authors": [
     "Caden Kriese"
   ],
@@ -14,15 +14,15 @@
   "environment": "server",
   "entrypoints": {
     "server": [
-      "org.peaksmp.touchups.Touchups"
+      "org.peaksmp.tweaks.Tweaks"
     ]
   },
   "mixins": [
     "touchups.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.5",
+    "fabricloader": ">=0.12.9",
     "fabric": "*",
-    "minecraft": "1.18"
+    "minecraft": "1.18.1"
   }
 }

@@ -1,12 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.peaksmp.touchups.mixin",
+  "package": "org.peaksmp.tweaks.mixin",
   "compatibilityLevel": "JAVA_17",
   "server": [
-    "PlayerJoinMixin",
-    "ServerStatusPacketListenerImplMixin",
-    "ServerGamePacketListenerImplMixin"
+    "AnvilScreenHandlerMixin",
+    "AnvilScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
