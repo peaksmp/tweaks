@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -26,11 +26,7 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    //TODO do we really need to include everything?
-    implementation include("net.kyori:adventure-api:${project.adventure_api_version}")
     modImplementation include("net.kyori:adventure-platform-fabric:${project.adventure_fabric_version}")
-    implementation "net.kyori:adventure-text-minimessage:${project.adventure_minimessage_version}"
-
     modImplementation include("me.lucko:fabric-permissions-api:${project.permissions_api_version}")
 }
 

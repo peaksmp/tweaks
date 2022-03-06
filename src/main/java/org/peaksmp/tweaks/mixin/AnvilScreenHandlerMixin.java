@@ -31,7 +31,7 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
 
     @Unique
     private static Text fromString(String string) {
-        return Tweaks.get().adventure().toNative(MiniMessage.miniMessage().parse(string));
+        return Tweaks.get().adventure().toNative(MiniMessage.miniMessage().deserialize(string));
     }
 
     @Inject(method = {"setNewItemName"}, at = {@At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;setCustomName(Lnet/minecraft/text/Text;)Lnet/minecraft/item/ItemStack;", shift = At.Shift.AFTER)})

@@ -3,9 +3,6 @@ package org.peaksmp.tweaks;
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.kyori.adventure.platform.fabric.FabricServerAudiences;
-import net.minecraft.client.render.WorldRenderer;
-import net.minecraft.screen.AnvilScreenHandler;
-import net.minecraft.world.chunk.ChunkManager;
 
 public class Tweaks implements DedicatedServerModInitializer {
     private static Tweaks tweaks;
