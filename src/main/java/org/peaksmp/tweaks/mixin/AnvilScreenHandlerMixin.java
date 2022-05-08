@@ -1,5 +1,6 @@
 package org.peaksmp.tweaks.mixin;
 
+import net.kyori.adventure.platform.fabric.FabricServerAudiences;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -30,8 +31,10 @@ public abstract class AnvilScreenHandlerMixin extends ForgingScreenHandler {
     @Shadow public abstract void updateResult();
 
     @Unique
-    private static Text fromString(String string) {
-        return Tweaks.get().adventure().toNative(MiniMessage.miniMessage().deserialize(string));
+    private static Text fromString(String string) throws IllegalStateException {
+        try( FabricServerAudiences audiences = Tweaks.get().adventure()) {
+           return audiences.toNative(MiniMessage.miniMessage().deserialize(string));
+        }
     }
 
     @Inject(method = {"setNewItemName"}, at = {@At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;setCustomName(Lnet/minecraft/text/Text;)Lnet/minecraft/item/ItemStack;", shift = At.Shift.AFTER)})

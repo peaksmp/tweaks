@@ -8,7 +8,7 @@ public class Tweaks implements DedicatedServerModInitializer {
     private static Tweaks tweaks;
     private FabricServerAudiences adventure;
 
-    public FabricServerAudiences adventure() {
+    public FabricServerAudiences adventure() throws IllegalStateException {
         if(this.adventure == null) throw new IllegalStateException("Tried to access Adventure without a running server!");
         return adventure;
     }
