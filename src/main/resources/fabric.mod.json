@@ -21,7 +21,7 @@
     "touchups.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.0",
+    "fabricloader": ">=0.14.10",
     "fabric": "*",
     "minecraft": "1.19.3"
   }
