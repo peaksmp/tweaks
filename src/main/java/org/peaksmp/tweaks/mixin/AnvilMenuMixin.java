@@ -32,7 +32,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @Unique
     private static Component fromString(String string) throws IllegalStateException {
-        try( FabricServerAudiences audiences = Tweaks.get().adventure()) {
+        try(FabricServerAudiences audiences = Tweaks.get().adventure()) {
            return audiences.toNative(MiniMessage.miniMessage().deserialize(string));
         }
     }
