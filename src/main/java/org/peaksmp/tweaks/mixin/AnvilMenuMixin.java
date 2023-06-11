@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AnvilMenu.class)
 public abstract class AnvilMenuMixin extends ItemCombinerMenu {
@@ -38,7 +38,7 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
     }
 
     @Inject(method = {"setItemName"}, at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;setHoverName(Lnet/minecraft/network/chat/Component;)Lnet/minecraft/world/item/ItemStack;", shift = At.Shift.AFTER)})
-    public void setItemName(String name, CallbackInfo ci) {
+    public void setItemName(String string, CallbackInfoReturnable<Boolean> cir) {
         ItemStack itemStack = getSlot(2).getItem();
         itemStack.setHoverName(fromString(itemName));
     }
