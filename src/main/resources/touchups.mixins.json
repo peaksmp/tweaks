@@ -4,8 +4,7 @@
   "package": "org.peaksmp.tweaks.mixin",
   "compatibilityLevel": "JAVA_21",
   "server": [
-    "AnvilMenuMixin",
-    "AnvilScreenMixin"
+    "AnvilMenuMixin"
   ],
   "injectors": {
     "defaultRequire": 1
