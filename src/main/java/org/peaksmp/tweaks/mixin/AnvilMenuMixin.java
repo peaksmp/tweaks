@@ -1,6 +1,6 @@
 package org.peaksmp.tweaks.mixin;
 
-import net.kyori.adventure.platform.fabric.FabricServerAudiences;
+import net.kyori.adventure.platform.modcommon.MinecraftServerAudiences;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AnvilMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.ItemCombinerMenuSlotDefinition;
 import net.minecraft.world.inventory.ItemCombinerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
@@ -24,16 +25,16 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
 
     @Shadow private String itemName;
 
-    public AnvilMenuMixin(@Nullable MenuType<?> menuType, int i, Inventory inventory, ContainerLevelAccess containerLevelAccess) {
-        super(menuType, i, inventory, containerLevelAccess);
+    public AnvilMenuMixin(@Nullable MenuType<?> menuType, int i, Inventory inventory, ContainerLevelAccess containerLevelAccess, ItemCombinerMenuSlotDefinition itemCombinerMenuSlotDefinition) {
+        super(menuType, i, inventory, containerLevelAccess, itemCombinerMenuSlotDefinition);
     }
 
     @Shadow public abstract void createResult();
 
     @Unique
     private static Component componentFromString(String string) throws IllegalStateException {
-        try(FabricServerAudiences audiences = Tweaks.get().adventure()) {
-            return audiences.toNative(MiniMessage.miniMessage().deserialize(string));
+        try(MinecraftServerAudiences audiences = Tweaks.get().adventure()) {
+            return audiences.asNative(MiniMessage.miniMessage().deserialize(string));
         }
     }
 
