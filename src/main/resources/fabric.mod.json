@@ -3,7 +3,7 @@
   "id": "tweaks",
   "version": "${version}",
   "name": "tweaks",
-  "description": "Simple gameplay mechanic refinements to decrease the repetitiveness and enhance the experience of the game for seasoned Minecrafters.",
+  "description": "Simple gameplay refinements aimed at decreasing repetitiveness and enhancing the game for experienced players.",
   "authors": [
     "Caden Kriese"
   ],
@@ -23,6 +23,6 @@
   "depends": {
     "fabricloader": ">=0.16.9",
     "fabric": "*",
-    "minecraft": "1.21.3"
+    "minecraft": "1.21.4"
   }
 }
